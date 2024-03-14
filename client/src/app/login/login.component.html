@@ -1,0 +1,33 @@
+<div class="col-md-12">
+    <div class="text-bg-dark text-center rounded-bottom py-4">
+        <h1 class="display-4">
+            Login Page
+        </h1>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="container mt-4">
+        <!-- <div class="row">
+            <h2>Login Page</h2>
+            <hr>
+        </div> -->
+        <div class="row">
+            <div class="col-sm-6">
+                <form class="row">
+                    <div class="col-12 mb-3">
+                        <label class="form-label" for="emailInput">Username</label>
+                        <input class="form-control form-control-lg" type="text" [ngModel]="username" (ngModelChange)="username = $event" [ngModelOptions]="{standalone:true}" class="form-control" id="username" placeholder="Type your Username here">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label class="form-label" for="passwordInput">Password</label>
+                        <input class="form-control form-control-lg" type="text" [ngModel]="password" (ngModelChange)="password = $event" [ngModelOptions]="{standalone:true}" class="form-control" id="password" placeholder="Type your Password here">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

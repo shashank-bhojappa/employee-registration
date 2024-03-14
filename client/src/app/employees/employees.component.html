@@ -1,0 +1,49 @@
+<div class="text-bg-dark text-center rounded-bottom py-4">
+    <h1 class="display-4">
+        Employee Information
+    </h1>
+</div>
+<div class="p-4">
+    <div class="row">
+        <div class="col-md-12">
+        </div>
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Location</th>
+                    <th>Salary</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of service.list">
+                        <td>{{employee.fullName}}</td>
+                        <td>{{employee.position}}</td>
+                        <td>{{employee.location}}</td>
+                        <td>{{employee.salary}}</td>
+                        <td><i class="far fa-trash-alt fa-lg text-secondary" (click)="onDelete(employee._id)"></i></td>
+                        <td><i class="fa fa-thin fa-pencil" (click)="populateForm(employee)"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="container">
+    <button routerLink="/form" type="button" class="btn btn-primary">Fill Employee Form</button>
+    <button type="button" class="btn btn-dark" (click)="openWindow()">Chat</button>
+</div>
+<div *ngIf="close" id="chat-applicaton">
+    <h2>Internal Messenger Service <button class="btn btn-danger" (click)="closeWindow()">Close</button></h2>
+    <div id="chat-window">
+      <div id="output" *ngFor="let data of output">
+          <p><strong>{{data.handle}} : </strong>{{data.message}}</p>
+      </div>
+      <div id="feedback"><p>{{feedback}}</p></div>
+    </div>
+    <input id="handle" type="text" [ngModel]="username" (ngModelChange)="username = $event" [ngModelOptions]="{standalone:true}" placeholder="Handle" />
+    <input id="message" type="text" [ngModel]="message" (ngModelChange)="message = $event" [ngModelOptions]="{standalone:true}" placeholder="Message" autocomplete="off"
+      (keypress)="messageTyping()" />
+    <button class="btn btn-primary" type="button" id="send" style="cursor: pointer; width: 100%;" (click)="sendMessage()">Send</button>
+</div>

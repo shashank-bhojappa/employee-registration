@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+  # Mongodb service
+  mongo_db:
+    container_name: db_container
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - mean-network
+
+  # Node api service
+  backend:
+    build: ./server
+    container_name: node-api
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on: 
+      - mongo_db
+    networks:
+      - mean-network
+
+  # Angular UI
+  frontend: 
+    build: ./client 
+    container_name: angular-ui
+    ports:
+      - "4200:80"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+    networks:
+      - mean-network
+
+volumes:
+  mongo_data: {}
+
+networks:
+  mean-network:
+    driver: bridge

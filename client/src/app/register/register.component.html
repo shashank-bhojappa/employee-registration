@@ -1,0 +1,33 @@
+<div class="col-md-12">
+    <div class="text-bg-dark text-center rounded-bottom py-4">
+        <h1 class="display-4">
+            Registration
+        </h1>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="container mt-4">
+        <!-- <div class="card"> -->
+            <!-- <h1>Employee Registration</h1> -->
+            <form class="row">
+                <div class="col-12 mb-3">
+                    <label class="form-label">Firstname</label>
+                    <input class="form-control form-control-lg" type="text" [ngModel]="firstname" (ngModelChange)="firstname = $event" [ngModelOptions]="{standalone:true}" class="form-control" id="firstname" placeholder="Enter Firstname" >
+                </div>
+                <div class="col-12 mb-3">
+                    <label class="form-label">Lasttname</label>
+                    <input class="form-control form-control-lg" type="text" [ngModel]="lastname" (ngModelChange)="lastname = $event" [ngModelOptions]="{standalone:true}" class="form-control" id="lastname" placeholder="Enter Lastname" >
+                </div>
+                <div class="col-12 mb-3">
+                    <label class="form-label">Username</label>
+                    <input class="form-control form-control-lg" type="text" [ngModel]="username" (ngModelChange)="username = $event" [ngModelOptions]="{standalone:true}" class="form-control" id="usernamr" placeholder="Enter Username" >
+                </div>
+                <div class="col-12 mb-3">
+                    <label class="form-label">Password</label>
+                    <input class="form-control form-control-lg" type="text" [ngModel]="password" (ngModelChange)="password = $event" [ngModelOptions]="{standalone:true}" class="form-control" id="password" placeholder="Enter Password" >
+                </div>
+                <button type="submit" class="btn btn-primary mt-4" (click)="save()">Save</button>
+            </form>
+        <!-- </div> -->
+    </div>
+</div>
