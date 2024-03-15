@@ -16,7 +16,7 @@ FROM node:14-alpine as build
 # EXPOSE 80
 
 
-COPY package*.json ./
+COPY . /dist/src/app
 
 RUN npm install
 
