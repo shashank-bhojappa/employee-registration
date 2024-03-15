@@ -9,7 +9,7 @@ RUN npm install
 RUN npm run build
 
 # Serve Application using Nginx Server
-FROM nginx:alpine
+FROM nginx:1.20 as ngx
 
 COPY --from=build /dist/src/app/dist/client /usr/share/nginx/html
 
