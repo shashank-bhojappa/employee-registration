@@ -1,6 +1,6 @@
 FROM node:14-alpine as build
 
-WORKDIR /dist/src/app
+# WORKDIR /dist/src/app
 
 # COPY . .
 
