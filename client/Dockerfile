@@ -32,7 +32,7 @@ WORKDIR /dist/src/app
 
 COPY . .
 
-FROM nginx:stable
+FROM nginx:1.25.4-alpine
 
 RUN rm -rf /usr/share/nginx/html/*
 
