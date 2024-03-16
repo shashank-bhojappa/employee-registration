@@ -2,16 +2,16 @@ version: '3.9'
 
 services:
   # Mongodb service
-  mongo_db:
-    container_name: db_container
-    image: mongo:latest
-    restart: always
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo_data:/data/db
-    networks:
-      - mean-network
+  # mongo_db:
+  #   container_name: db_container
+  #   image: mongo:latest
+  #   restart: always
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - mongo_data:/data/db
+  #   networks:
+  #     - mean-network
 
   # Node api service
   backend:
@@ -21,10 +21,10 @@ services:
     restart: always
     ports:
       - "3000:3000"
-    depends_on: 
-      - mongo_db
-    networks:
-      - mean-network
+    # depends_on: 
+    #   - mongo_db
+    # networks:
+    #   - mean-network
 
   # Angular UI
   frontend: 
@@ -37,12 +37,12 @@ services:
     tty: true
     depends_on:
       - backend
-    networks:
-      - mean-network
+    # networks:
+    #   - mean-network
 
-volumes:
-  mongo_data: {}
+# volumes:
+#   mongo_data: {}
 
-networks:
-  mean-network:
-    driver: bridge
+# networks:
+#   mean-network:
+#     driver: bridge
