@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
       "username": this.username,
       "password": this.password
     };
-    this.http.post<RegisterResponse>("http://localhost:3000/api/employees/register",bodyData).subscribe((resultData)=>{
+    this.http.post<RegisterResponse>("http://18.234.41.188:3000/api/employees/register",bodyData).subscribe((resultData)=>{
       console.log(resultData);
       if(resultData.successMsg === "User Registered Successfullly!!!"){
         console.log('registered')

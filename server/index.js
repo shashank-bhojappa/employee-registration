@@ -10,7 +10,7 @@ const app = express();
 const connectDb = require('./db.js')
 const employeeRoutes = require('./controllers/employee.controller')
 const {errorHandler} = require('./middlewares')
-app.use(cors({origin:'http://localhost:4200',credentials:true})) //http://localhost:4200/ --> dont add forward slash in the end of url
+app.use(cors({origin:'http://18.234.41.188:4200',credentials:true})) //http://18.234.41.188:4200/ --> dont add forward slash in the end of url
 const User = require('./models/register.model.js')
 const passport = require('passport')
 const { initializingPassport, isAuthenticated, sendUser } = require('./passportConfig.js')

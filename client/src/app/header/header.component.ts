@@ -15,11 +15,11 @@ export class HeaderComponent {
     }
 
     logout(){
-        this.http.get<LogoutResponse>("http://localhost:3000/logout").subscribe((resultData:any)=>{
+        this.http.get<LogoutResponse>("http://18.234.41.188:3000/logout").subscribe((resultData:any)=>{
             console.log(resultData)
             if(resultData.successMsg == "User Logged out Successfully"){
                 localStorage.clear();
-                // this.http.get<Clear>("http://localhost:3000/clear").subscribe((resData:any)=>{
+                // this.http.get<Clear>("http://18.234.41.188:3000/clear").subscribe((resData:any)=>{
                 //     console.log(resData)
                 // })
                 this.router.navigateByUrl('/home');

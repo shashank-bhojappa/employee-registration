@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit{
   constructor(private router: Router, private http: HttpClient, private _serverevent: ServereventService, private usernameService: UsernameService ){}
 
   ngOnInit() {
-    // this._serverevent.getServerSentEvent('http://localhost:3000/progress').subscribe(data => console.log(data))
+    // this._serverevent.getServerSentEvent('http://18.234.41.188:3000/progress').subscribe(data => console.log(data))
   }
 
   login(){
@@ -35,13 +35,13 @@ export class LoginComponent implements OnInit{
       username: this.username,
       password: this.password
     };
-    this.http.post<LoginResponse>("http://localhost:3000/api/employees/login",bodyData).subscribe((resultData:any)=>{
+    this.http.post<LoginResponse>("http://18.234.41.188:3000/api/employees/login",bodyData).subscribe((resultData:any)=>{
       console.log(resultData)
       if(resultData.successMsg == "User Logged in Successfully"){
         localStorage.setItem('jwtToken',resultData.token)
         localStorage.setItem('username',resultData.username)
         this.usernameService.username = resultData.username
-        // this._serverevent.getServerSentEvent('http://localhost:3000/progress').subscribe(data => console.log(JSON.parse(data.data).msg))
+        // this._serverevent.getServerSentEvent('http://18.234.41.188:3000/progress').subscribe(data => console.log(JSON.parse(data.data).msg))
         this.router.navigateByUrl('/');
       }
       if(resultData.failureMsg == "User Login Failed"){
