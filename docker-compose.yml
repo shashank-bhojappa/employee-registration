@@ -16,6 +16,7 @@ services:
   # Node api service
   backend:
     build: ./server
+    image: shashankbhojappa/server-side
     container_name: node-api
     restart: always
     ports:
@@ -28,6 +29,7 @@ services:
   # Angular UI
   frontend: 
     build: ./client 
+    image: shashankbhojappa/client-side
     container_name: angular-ui
     ports:
       - "4200:80"
