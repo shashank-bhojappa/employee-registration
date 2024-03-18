@@ -32,7 +32,7 @@ services:
     image: shashankbhojappa/client-side
     container_name: angular-ui
     ports:
-      - "4200:80"
+      - "8000:80"
     stdin_open: true
     tty: true
     depends_on:
