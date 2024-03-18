@@ -4,8 +4,6 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-WORKDIR /usr/src/app/server 
-
 RUN npm install
 
 EXPOSE 3000
