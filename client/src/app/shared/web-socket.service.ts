@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class WebSocketService {
 
   constructor() { } 
-  socket = io('http://18.234.41.188:3000');
+  socket = io('http://3.88.84.235:3000');
 
   listen(eventname: string) : Observable<any> {
     return new Observable((subscriber) => {

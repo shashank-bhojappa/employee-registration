@@ -11,7 +11,7 @@ export class EmployeeService {
 
   constructor(private fb: FormBuilder, private http: HttpClient) {}
 
-  readonly baseUrl = "http://18.234.41.188:3000/api/employees/";
+  readonly baseUrl = "http://3.88.84.235:3000/api/employees/";
 
   list:Employee[]=[];
 
